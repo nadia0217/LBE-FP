@@ -54,7 +54,6 @@ class HandphoneController extends Controller
     public function editItem(ItemRequest $request, $id)
     {
         $data = $request->validated();
-        dd($request->all());
         $editedItem = Handphone::findOrFail($id)->update($data);
         return redirect()->route('items.index')->with('status', 'Item berhasil diperbarui');
     }
