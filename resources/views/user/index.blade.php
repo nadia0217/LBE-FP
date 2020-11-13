@@ -1,23 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">User Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in as a User.
+    <div class="row row-cols-3 mx-4">
+        @foreach ($items as $item)
+            <div class="d-flex">
+                <div class="col card m-4" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$item->nama_barang}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{$item->brand}}</h6>
+                        <p>Stok: {{$item->stok}}</p>
+                        <p>Harga: {{$item->harga_jual}}</p>
+                        <a href="{{route('user.show', ['id'=> $item->id])}}" class="card-link">Lihat</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
-</div>
 @endsection

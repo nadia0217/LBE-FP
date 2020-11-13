@@ -25,11 +25,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function dashboardAdmin()
+    public function adminDashboard()
     {
-        return view('admin.index');
+        return view('items.index');
     }
-    public function dashboardUser()
+    public function userDashboard()
     {
         return view('user.index');
     }

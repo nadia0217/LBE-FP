@@ -30,6 +30,7 @@ class ItemRequest extends FormRequest
             'harga_beli' => ['required', 'string'],
             'harga_jual' => ['required', 'string'],
             'user_id' => ['required', 'string'],
+            'image_url' => ['required', 'string'],
         ];
     }
 }

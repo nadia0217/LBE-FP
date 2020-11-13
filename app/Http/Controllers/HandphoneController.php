@@ -9,11 +9,18 @@ use Auth;
 
 class HandphoneController extends Controller
 {
-
-    public function displayItem()
+    public function userDashboard()
     {
         $user_id = Auth::user()->id;
-        $items = Handphone::where('user_id', $user_id)->get();
+        $items = Handphone::all();
+        return view('user.index',[
+            'items' => $items,
+        ]);
+    }
+    public function adminDashboard()
+    {
+        $user_id = Auth::user()->id;
+        $items = Handphone::all();
         $status = 0;
         if (count($items) > 0) {
             $status = 1;
@@ -22,14 +29,6 @@ class HandphoneController extends Controller
             'status' => $status,
             'items' => $items,
         ]);
-    }
-    public function userDashboard()
-    {
-        return view('home');
-    }
-    public function adminDashboard()
-    {
-        return view('items.index');
     }
     public function displayCreateItemPage()
     {
@@ -40,7 +39,7 @@ class HandphoneController extends Controller
     {
         $data = $request->validated();
         $newItem = Handphone::create($data);
-        return redirect()->route('items.index')->with('status', 'Item berhasil ditambahkan');
+        return redirect()->route('admin.index')->with('status', 'Item berhasil ditambahkan');
     }
 
     public function displayEditItemPage($id)
@@ -55,7 +54,7 @@ class HandphoneController extends Controller
     {
         $data = $request->validated();
         $editedItem = Handphone::findOrFail($id)->update($data);
-        return redirect()->route('items.index')->with('status', 'Item berhasil diperbarui');
+        return redirect()->route('admin.index')->with('status', 'Item berhasil diperbarui');
     }
 
     public function displayDeleteItemPage($id)
@@ -69,13 +68,21 @@ class HandphoneController extends Controller
     public function deleteItem($id)
     {
         $deletedItem = Handphone::findOrFail($id)->delete();
-        return redirect()->route('items.index')->with('status', 'Item berhasil dihapus');
+        return redirect()->route('admin.index')->with('status', 'Item berhasil dihapus');
     }
 
     public function showItem($id)
     {
         $item = Handphone::findOrFail($id);
         return view('items.show',[
+            'item' => $item,
+        ]);
+    }
+
+    public function userShowItem($id)
+    {
+        $item = Handphone::findOrFail($id);
+        return view('user.show',[
             'item' => $item,
         ]);
     }

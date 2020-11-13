@@ -21,6 +21,7 @@ class CreateHandphonesTable extends Migration
             $table->integer('stok');
             $table->string('harga_beli');
             $table->string('harga_jual');
+            $table->string('image_url');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

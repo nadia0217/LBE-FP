@@ -3,8 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Cache\RedisTaggedCache;
 
-class OnlyUser
+class onlyUser
 {
     /**
      * Handle an incoming request.
@@ -15,9 +16,9 @@ class OnlyUser
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()->role != 'user'){
-            return redirect()->route('notfound');
+        if($request->user()->role == 'user'){    
+            return $next($request);
         }
-        return $next($request);
+        return redirect('notfound');
     }
 }

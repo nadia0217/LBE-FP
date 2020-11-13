@@ -16,9 +16,9 @@ class onlyAdmin
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()->role != 'admin'){
-            return redirect()->route('homepage');
+        if($request->user()->role == 'admin'){    
+            return $next($request);
         }
-        return $next($request);
+        return redirect('notfound');
     }
 }

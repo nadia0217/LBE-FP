@@ -48,6 +48,10 @@
                                 <label for="harga_jual">Harga jual</label>
                                 <input type="text" class="form-control" id="harga_jual" name="harga_jual" value="{{$item->harga_jual}}">
                             </div>
+                            <div class="form-group">
+                                <label for="image_url">URL gambar</label>
+                            <input type="text" class="form-control" id="image_url" name="image_url" value="{{$item->image_url}}">
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

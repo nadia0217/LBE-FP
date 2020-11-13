@@ -29,7 +29,17 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        if (auth()->user()->role == 'admin') {
+            return route('admin.index');
+        }
+        if (auth()->user()->role == 'user') {
+            return route('user.index');
+        }
+        return route('homepage');
+    }
 
     /**
      * Create a new controller instance.
@@ -53,6 +63,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role' => ['required', 'string', 'max:255'],
         ]);
     }
 
