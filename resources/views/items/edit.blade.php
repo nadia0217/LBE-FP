@@ -25,36 +25,16 @@
                                 <input type="text" class="form-control" id="brand" name="brand" value="{{$item->brand}}">
                             </div>
                             <div class="form-group">
-                                {{-- <label for="stok">Stok</label>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <div class="input-group">
-                                                <span class="input-group-prepend">
-                                                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="minus" data-field="quant[1]">
-                                                        <span class="fa fa-minus"></span>
-                                                    </button>
-                                                </span>
-                                                <input type="text" name="quant[1]" class="form-control input-number" id="stok" name="stok" value="{{$item->stok}}" min="0" max="1000">
-                                                <span class="input-group-append">
-                                                    <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
-                                                        <span class="fa fa-plus"></span>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>--}}
                                 <label for="stok">Stok</label>
                                 <div class="input-group">
                                     <span class="input-group-prepend">
-                                        <button type="button" class="btn btn-outline-secondary btn-number" data-type="minus" data-field="quant[1]">
+                                        <button type="button" class="btn btn-outline-secondary btn-number" data-type="minus" data-field="stok">
                                             <span class="fa fa-minus"></span>
                                         </button>
                                     </span>
                                     <input type="text" class="form-control input-number" id="stok" name="stok" value="{{$item->stok}}" min="0" max="1000">
                                     <span class="input-group-append">
-                                        <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="quant[1]">
+                                        <button type="button" class="btn btn-outline-secondary btn-number" data-type="plus" data-field="stok">
                                             <span class="fa fa-plus"></span>
                                         </button>
                                     </span>
