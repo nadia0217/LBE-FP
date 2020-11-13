@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row row-cols-3 mx-4">
+    <div class="row row-cols-4 mx-4">
         @foreach ($items as $item)
             <div class="d-flex">
                 <div class="col card m-4" style="width: 18rem;">
