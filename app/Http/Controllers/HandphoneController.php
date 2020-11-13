@@ -66,7 +66,7 @@ class HandphoneController extends Controller
         ]);
     }
 
-    public function deleteMovie($id)
+    public function deleteItem($id)
     {
         $deletedItem = Handphone::findOrFail($id)->delete();
         return redirect()->route('items.index')->with('status', 'Item berhasil dihapus');
