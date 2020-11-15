@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>iSquarePhone</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -12,14 +12,19 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
+                background-color: #FFDAB9;
+
+                color: #8B4513;
+                font-family: 'Sura', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
             }
-
+/** 
+		    body{
+			background-image:url('bekgron estetik.jpg');
+		    }*/
+	
             .full-height {
                 height: 100vh;
             }
@@ -74,10 +79,10 @@
                         <a class="nav-link" href="/user/index">Home</a>
                     @endif
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}"></a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}"></a>
                         @endif
                     @endauth
                 </div>
@@ -85,18 +90,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    iSquarePhone
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="http://127.0.0.1:8005/login">Login</a>
+                    <a href="http://127.0.0.1:8005/register">Register</a>
+                
                 </div>
             </div>
         </div>
